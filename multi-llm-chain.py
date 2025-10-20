@@ -5,7 +5,13 @@ import streamlit as st
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser, JsonOutputParser
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+api_key = st.text_input("Enter your OpenAI API Key", type="password")
+
+if not api_key:
+    st.warning("Please enter your OpenAI API key to continue")
+    st.stop()
+
 llm1 = ChatOpenAI(model="gpt-4o", api_key=OPENAI_API_KEY)
 llm2 = ChatOllama(model="gemma:2b")
 
