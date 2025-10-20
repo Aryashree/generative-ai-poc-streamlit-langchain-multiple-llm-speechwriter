@@ -15,7 +15,7 @@ if not api_key:
     st.stop()
 
 llm1 = ChatOpenAI(model="gpt-4o", api_key=api_key)
-llm2 = ChatOllama(model="gemma:2b")
+llm2 = ChatOpenAI(model="gpt-4o-mini", api_key=api_key)
 
 # Prompts
 title_prompt = PromptTemplate(
