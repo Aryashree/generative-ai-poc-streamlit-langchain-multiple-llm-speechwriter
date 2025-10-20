@@ -14,7 +14,7 @@ if not api_key:
     st.warning("Please enter your OpenAI API key to continue")
     st.stop()
 
-llm1 = ChatOpenAI(model="gpt-4o", api_key=OPENAI_API_KEY)
+llm1 = ChatOpenAI(model="gpt-4o", api_key=api_key)
 llm2 = ChatOllama(model="gemma:2b")
 
 # Prompts
